@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMT Energy System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #56c27e, #006533);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .logo {
+            font-size: 5.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(270deg, #ffffff, #a2f5d1, #00d46e, #ffffff);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 5s ease infinite;
+            text-shadow: none;
+        }
+        
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .description {
+            font-size: 0.8rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            line-height: 1.6;
+            animation: slideInUp 1s ease-out forwards;
+            /* New animation for description */
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .description h2 {
+            font-size: 1.2rem;
+            /* Adjust heading size */
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn-custom {
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline-light:hover {
+            background-color: #ffffff;
+            color: #006533;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInUp {
+            /* New keyframe for description */
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            .description {
+                font-size: 1rem;
+            }
+            .description h2 {
+                font-size: 1.5rem;
+            }
+            .btn-custom {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <i class="bi bi-lightning-fill" style="font-size: 4rem; color: #a2f5d1; margin-bottom: 20px; animation: fadeIn 1s ease-in-out;"></i>
+
+    <div class="logo">FMT Energy System</div>
+
+    <div class="description">
+        <h2>Intelligent Energy Management for Modern Facilities</h2>
+        <p>Effortlessly monitor, analyze, and optimize your energy consumption with professional insights for Facility and Maintenance teams.</p>
+    </div>
+
+    <div class="btn-group">
+        <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-custom">
+            <i class="bi bi-person-fill"></i> Login
+        </a>
+        <a href="{{ url_for('signup') }}" class="btn btn-outline-light btn-custom">
+            <i class="bi bi-person-plus-fill"></i> Signup
+        </a>
+    </div>
+
+    <footer>
+        &copy; 2025 FMT Energy Systems | Facility & Maintenance AMT
+    </footer>
+
+</body>
+
+</html>
